@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      {/*1d*/}
+      const productCost = 10 + 8 * 2;
+      console.log(productCost);
+
+      const div = (
+        <div>
+          {/*1a*/}
+          <button>Good job!</button>
+          {/*1b*/}
+          <p>My name is Sanji</p>
+          {/*1c*/}
+          <p>Cotton Socks</p>
+          <p>Price: $10 </p>
+          <button>Add to Cart</button>
+          {/*1e*/}
+          <p>Product Cost: ${productCost}</p>
+        </div>
+      );
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div);
+    </script>
+  </body>
+</html> 
