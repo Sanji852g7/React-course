@@ -25,20 +25,7 @@
       }
 
       function ChatMessage({message, sender}){
-        //const message = props.message;
-        //const sender = props.sender;
-        //const {message, sender} = props;
 
-        /*
-        if (sender === 'robot') {
-          return (
-            <div>
-              <img src="robot.png" width="50"/>
-              {message}
-          </div>
-          );
-        }
-        */
         return (
           <div>
             {sender === 'robot' && (
@@ -52,26 +39,47 @@
         );
       }
 
+      function ChatMessages() {
+        const chatMessages = [
+          {
+            message:'hello chatbot',
+            sender: 'user',
+            id: 'id1'
+          }, {
+            message: 'Hello! How can I help you?',
+            sender: 'robot',
+            id: 'id2'
+          }, {
+            message: 'can you give me todays date?',
+            sender: 'user',
+            id: 'id3'
+          }, {
+            message: 'Today is March 11',
+            sender: 'robot',
+            id: 'id4'
+          }
+        ];
+
+        return  (
+          <>
+            {chatMessages.map((chatMessage) => {
+              return (
+                <ChatMessage 
+                  message = {chatMessage.message}
+                  sender = {chatMessage.sender}
+                  key = {chatMessage.id}
+                />
+              );
+            })}
+          </>
+        );
+      }
+
       function App() {
         return (
           <>
             <ChatInput />
-            <ChatMessage 
-              message="hello chatbot" 
-              sender="user"
-            />
-            <ChatMessage 
-              message="Hello! How can I help you?"
-              sender="robot"
-            />
-            <ChatMessage 
-            message="can you give me todays date?" 
-            sender="user"
-            />
-            <ChatMessage 
-            message="Today is March 11" 
-            sender="robot"
-            />
+            <ChatMessages />
           </>
         );
       }
