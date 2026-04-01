@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Challenge Exercises</title>
+    <title>Chatbot</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -17,21 +17,11 @@
 
       function ChatInput({chatMessages, setChatMessages}){
         const [inputText, setInputText] = React.useState('');
-        const [isLoading, setIsLoading] = React.useState(false);
-
-
         function saveInputText(event) {
           setInputText(event.target.value);
         }
 
-        async function sendMessage() {
-          if (isLoading || inputText === '') {
-            return;
-          }
-
-          setIsLoading(true);
-
-          setInputText('');
+        function sendMessage() {
 
           const newChatMessages = [
             ...chatMessages,
@@ -42,16 +32,9 @@
             }
           ];
 
-          setChatMessages([
-            ...newChatMessages,
-            {
-              message: 'Loading...',
-              sender: 'robot',
-              id: crypto.randomUUID()
-            }
-          ]);
+          setChatMessages(newChatMessages);
 
-          const response = await Chatbot.getResponseAsync(inputText);
+          const response = Chatbot.getResponse(inputText);
           setChatMessages([
             ...newChatMessages,
             {
@@ -62,15 +45,6 @@
           ]);
 
           setInputText('');
-          setIsLoading(false);
-        }
-
-        function handleKeyDown(event) {
-          if (event.key === 'Enter') {
-            sendMessage();
-          } else if (event.key === 'Escape') {
-            setInputText('');
-          }
         }
 
         return (
@@ -78,7 +52,6 @@
             <input 
               placeholder="Send a message to Chatbot" size="30" 
               onChange = {saveInputText}
-              onKeyDown = {handleKeyDown}
               value = {inputText}
             />
             <button 
@@ -92,11 +65,11 @@
         return (
           <div>
             {sender === 'robot' && (
-              <img src="../images/robot.png" width="50"/>
+              <img src="../0-images/robot.png" width="50"/>
             )}
             {message}
             {sender === 'user' && (
-              <img src="../images/user.png" width="50"/>
+              <img src="../0-images/user.png" width="50"/>
             )}
           </div>
         );
