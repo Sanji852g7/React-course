@@ -135,6 +135,24 @@
   margin-bottom: 8px;
 }
 
+.button-primary {
+  color: white;
+  background-color: rgb(25, 135, 84);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgb(220, 220, 220);
+}
+
+.button-secondary {
+  color: rgb(33, 33, 33);
+  background: white;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(220, 220, 220, 0.2);
+}
+
 .orders-page .buy-again-button {
   font-size: 14px;
   width: 140px;
