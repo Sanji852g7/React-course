@@ -5,7 +5,7 @@ import { Header } from '../../components/Header';
 import './OrdersPage.css'
 import { OrdersGrid } from './OrdersGrid';
 
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart}) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {

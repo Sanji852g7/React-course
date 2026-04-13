@@ -1,7 +1,7 @@
 import { OrderHeader } from './OrderHeader';
 import { OrderDetailsGrid } from './OrderDetailsGrid';
 
-export function OrdersGrid({ orders }) {
+export function OrdersGrid({ orders}) {
   return (
     <div className="orders-grid">
       {orders.map((order) => {
