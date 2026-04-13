@@ -209,3 +209,14 @@
   margin-top: 20px;
   margin-bottom: 19px;
 }
+
+/* Challenge exercise(8e) */
+.quantity-textbox {
+  width: 50px;
+}
+.link-primary {
+  cursor: pointer;
+  border: rgb(25, 135, 84) solid 1px;
+  border-radius: 3px;
+  padding: 2px 2px;
+}
