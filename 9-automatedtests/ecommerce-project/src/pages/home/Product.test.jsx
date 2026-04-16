@@ -3,7 +3,7 @@ import axios from "axios";
 // import { formatMoney } from "../../utils/money";
 // import CheckmarkIcon from '../../assets/images/icons/checkmark.png';
 import { expect, it, describe, vi, beforeEach } from 'vitest';
-import { Product } from "./Product";
+import { Product } from './Product';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
