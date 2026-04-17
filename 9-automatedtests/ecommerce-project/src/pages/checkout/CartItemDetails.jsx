@@ -37,17 +37,20 @@ export function CartItemDetails({ cartItem, deleteCartItem, loadCart }) {
   return (
     <>
       <img className="product-image"
-        src={cartItem.product.image} />
+        src={cartItem.product.image}
+        data-testid="cart-item-image" />
 
       <div className="cart-item-details">
-        <div className="product-name">
+        <div className="product-name"
+          data-testid="cart-item-name">
           {cartItem.product.name}
         </div>
-        <div className="product-price">
+        <div className="product-price"
+          data-testid="cart-item-price">
           {formatMoney(cartItem.product.priceCents)}
         </div>
         <div className="product-quantity">
-          <span>
+          <span data-testid="cart-item-quantity">
             Quantity: {isUpdatingQuantity
               ? <input type="text" className="quantity-textbox" value={quantity} onChange={updateQuantityInput} onKeyDown={handleQuantityKeyDown} />
               : <span className="quantity-label">{quantity}</span>
@@ -57,6 +60,7 @@ export function CartItemDetails({ cartItem, deleteCartItem, loadCart }) {
           </span>
           <span className="delete-quantity-link link-primary"
             onClick={deleteCartItem}
+            data-testid="cart-item-delete-quantity-link"
           >
             Delete
           </span>
